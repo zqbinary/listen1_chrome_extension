@@ -1167,14 +1167,17 @@
     });
 
   }]);
-
+  //播放控制器
   app.controller('PlayListController', ['$http','$scope', '$timeout',
                                         'angularPlayer','loWeb',
                                         function($http, $scope, $timeout, angularPlayer, loWeb){
     $scope.result = [];
     $scope.tab = 0;
-    $scope.loading = true 
-
+    $scope.loading = true
+    /**
+     *
+      * @param newTab 0,1,2 网易, 虾米(改落网), qq
+     */
     $scope.changeTab = function(newTab){
       $scope.tab = newTab;
       $scope.result = [];
