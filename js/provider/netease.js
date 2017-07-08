@@ -37,7 +37,13 @@ var netease = (function() {
             }
         };
     }
-
+    /**
+     * abum 所有歌曲
+     * @param url
+     * @param hm
+     * @param se
+     * @returns {{success: success}}
+     */
     var ne_get_playlist = function(url, hm, se) {
         var list_id = getParameterByName('list_id', url).split('_').pop();
         var target_url = 'http://music.163.com/playlist?id=' + list_id;
@@ -384,8 +390,14 @@ var netease = (function() {
             }
         };
     }
-
-var get_playlist = function(url, hm, se) {
+    /**
+     * 得到不同类型的列表
+     * @param url
+     * @param hm
+     * @param se
+     * @returns {{success}}
+     */
+    var get_playlist = function(url, hm, se) {
     var list_id = getParameterByName('list_id', url).split('_')[0];
     if (list_id == 'neplaylist') {
         return ne_get_playlist(url, hm, se);
